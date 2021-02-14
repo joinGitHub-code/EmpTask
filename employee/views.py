@@ -36,8 +36,7 @@ class emptask_CreateView(ListCreateAPIView):
     serializer_class = TaskSerializer
 
     def create(self, request, *args, **kwargs):
-        bill_data = request.data
-        print(bill_data)
+        
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
